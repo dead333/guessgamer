@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/project 1/project1.css">
+</head>
+
+<body>
+ <h1>This image contains something hidden. Can you find it?</h1><br>
+
+ <h2>Write your answer and click submit.</h2>
+ <input type="text" id="test"><br>
+ 
+ <button id="btn" class="inputAnswers" type="button" onclick="z()">SUBMIT</button><span id="err"></span>
+
+ <img id="womanPic" src="/project 1/woman at a far.png" alt="Lady" usemap="#ladymap" class="center"><br>
+ <audio id="audioRight">
+ <source src="/project 1/correct.mp3" type="audio/mpeg"/>
+ </audio>
+ <audio id="wrong">
+ <source src="/project 1/wrong.mp3" type="audio/mpeg"/>
+ </audio>
+<map name="ladymap">
+  <area shape="poly" coords="544,695,554,706,549,732,522,732,526,710,529,705" onClick=mousePressed();>
+  <area shape="rect" coords="1,1,1240,1240" onClick="document.getElementById('wrong').play(); return false;">
+</map>
+
+ <p>How to play.<br>
+    Simply click anywhere in the picture and you will hear a sound,<br>
+    the sound will indicate whether you have clicked a correct position, <br>
+    keep clicking to find the hidden message.<br>
+    Write the hidden message in the box and click submit, <br>
+    If you are correct you will move to the second level.<br>
+
+ </p>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+<script>
+  
+function z(){
+var a=document.getElementById("test");
+if((a.value.toUpperCase() ==="A HEAD")||(a.value.toUpperCase() ==="HEAD"))
+{
+document.getElementById('err').innerHTML= 'correct';
+$(window)[0].location = "http://127.0.0.1:5500/project%201/project1page2.html";
+}
+else
+{
+document.getElementById('err').innerHTML= 'wrong';
+
+
+}
+
+}
+
+
+
+function mousePressed(){
+  audioRight.pause()
+  audioRight.currentTime = 0
+  audioRight.play()
+  audioRight.playbackRate = 3;
+}
+
+
+var input1 = document.getElementById("test");
+
+// Execute a function when the user presses a key on the keyboard
+input1.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("btn").click();
+  }
+});
+
+</script>
+</html>

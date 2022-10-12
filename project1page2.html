@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/project 1/project1.css">
+</head>
+<body>
+    <h1>You have made it to level 2!</h1>
+    
+    <h2>Write your answer and click submit.</h2>
+    <audio id="audioRight">
+        <source src="/project 1/correct.mp3" type="audio/mpeg"/>
+    </audio>
+    <audio id="wrong">
+        <source src="/project 1/wrong.mp3" type="audio/mpeg"/>
+    </audio>
+    <button id="btn" class="inputAnswers" type="button" onclick="y()">SUMBIT</button><span id="err"></span>
+    <input type="text" id="test">
+    <img id="pastaFace" src="/project 1/kevindead3333_a_face_but_its_made_with_plate_of_spaghetti_373cdcfc-e36d-4a80-addc-b857f6d97421.png" class="center" alt="pastaface" usemap="#pastaMap">
+    <map name="pastaMap">
+        <!-- <area shape="circle" coords="290,172,333,250" onClick="document.getElementById('wrong').play(); return false;">
+        <area shape="circle" coords="337,300,44" onClick="document.getElementById('wrong').play(); return false;"> -->
+        <area shape="rect" coords="239,299,321,336" onClick=mousePressed();>
+        <area shape="rect" coords="483,298,578,357" onClick=mousePressed();>
+        <area shape="rect" coords="666,339,755,382" onClick=mousePressed();>
+        <area shape="rect" coords="1,1,884,898" onClick="document.getElementById('wrong').play(); return false;">
+    </map>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+<script>
+    
+    function y(){
+    var a=document.getElementById("test");
+    if((a.value.toUpperCase() ==="THIRD EYE")||(a.value.toUpperCase() ==="3RD EYE"))
+    {
+    document.getElementById('err').innerHTML= 'correct';
+    $(window)[0].location = "http://127.0.0.1:5500/project%201/project1page3.html";
+    }
+    else
+    {
+    document.getElementById('err').innerHTML= 'wrong';
+    
+    
+    }
+    
+    }
+
+
+function mousePressed(){
+  audioRight.pause()
+  audioRight.currentTime = 0
+  audioRight.play()
+  audioRight.playbackRate = 3;
+}
+
+
+
+
+var input2 = document.getElementById("test");
+
+// Execute a function when the user presses a key on the keyboard
+input2.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("btn").click();
+  }
+});
+
+</script>
+</html>
