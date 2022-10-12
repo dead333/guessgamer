@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/project 1/project1.css">
+    <link rel="stylesheet" href="project1.css">
 </head>
 <body>
     <h1>You have made it to level 2!</h1>
     
     <h2>Write your answer and click submit.</h2>
     <audio id="audioRight">
-        <source src="/project 1/correct.mp3" type="audio/mpeg"/>
+        <source src="correct.mp3" type="audio/mpeg"/>
     </audio>
     <audio id="wrong">
-        <source src="/project 1/wrong.mp3" type="audio/mpeg"/>
+        <source src="wrong.mp3" type="audio/mpeg"/>
     </audio>
     <button id="btn" class="inputAnswers" type="button" onclick="y()">SUMBIT</button><span id="err"></span>
     <input type="text" id="test">
-    <img id="pastaFace" src="/project 1/kevindead3333_a_face_but_its_made_with_plate_of_spaghetti_373cdcfc-e36d-4a80-addc-b857f6d97421.png" class="center" alt="pastaface" usemap="#pastaMap">
+    <img id="pastaFace" src="kevindead3333_a_face_but_its_made_with_plate_of_spaghetti_373cdcfc-e36d-4a80-addc-b857f6d97421.png" class="center" alt="pastaface" usemap="#pastaMap">
     <map name="pastaMap">
         <!-- <area shape="circle" coords="290,172,333,250" onClick="document.getElementById('wrong').play(); return false;">
         <area shape="circle" coords="337,300,44" onClick="document.getElementById('wrong').play(); return false;"> -->
@@ -43,7 +43,7 @@
     if((a.value.toUpperCase() ==="THIRD EYE")||(a.value.toUpperCase() ==="3RD EYE"))
     {
     document.getElementById('err').innerHTML= 'correct';
-    $(window)[0].location = "http://127.0.0.1:5500/project%201/project1page3.html";
+    $(window)[0].location = "project1page3.html";
     }
     else
     {
